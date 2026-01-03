@@ -1,0 +1,46 @@
+<!--HEADER START-->
+<app-header></app-header>
+<!--HEADER END-->
+
+<!--404 PAGE START-->
+<section class="notfound-page">
+    <div class="container">
+        <div class="row justify-content-center align-items-center min-vh-100">
+            <div class="col-lg-8 col-md-10 text-center">
+                <div class="notfound-content" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="notfound-number">
+                        <h1 class="error-code">404</h1>
+                    </div>
+                    <div class="notfound-message">
+                        <h2 class="error-title">Page Not Found</h2>
+                        <p class="error-description">
+                            Oops! La page que vous recherchez semble avoir disparu dans le cyberespace.
+                            Elle a peut-être été déplacée, supprimée ou n'a jamais existé.
+                        </p>
+                    </div>
+                    <div class="notfound-actions">
+                        <a routerLink="/" class="btn btn-primary btn-large">
+                            <i class="fas fa-home me-2"></i>
+                            Retour à l'accueil
+                        </a>
+                        <button type="button" (click)="goBack()" class="btn btn-outline-primary btn-large ms-3">
+                            <i class="fas fa-arrow-left me-2"></i>
+                            Page précédente
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--404 PAGE END-->
+
+<!--FOOTER START-->
+<app-footer></app-footer>
+<!--FOOTER END-->
+
+<!--To Top Link START-->
+<a href="#" class="toTop" id="return-to-top">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<!--To Top Link END-->

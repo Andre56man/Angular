@@ -1,0 +1,192 @@
+.notfound-page {
+    padding: 120px 0 80px;
+    background: linear-gradient(135deg, rgba(240, 127, 129, 0.9) 0%, rgba(211, 109, 111, 0.95) 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+        opacity: 0.3;
+    }
+
+    .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    .notfound-content {
+        padding: 60px 40px;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+        }
+    }
+
+    .notfound-number {
+        margin-bottom: 30px;
+
+        .error-code {
+            font-size: 150px;
+            font-weight: 900;
+            line-height: 1;
+            background: linear-gradient(135deg, rgb(240, 127, 129) 0%, rgb(211, 109, 111) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 0;
+            text-shadow: 0 10px 30px rgba(240, 127, 129, 0.3);
+            animation: pulse 2s ease-in-out infinite;
+
+            @media (max-width: 768px) {
+                font-size: 100px;
+            }
+
+            @media (max-width: 576px) {
+                font-size: 80px;
+            }
+        }
+    }
+
+    .notfound-message {
+        margin-bottom: 40px;
+
+        .error-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 20px;
+            line-height: 1.2;
+
+            @media (max-width: 768px) {
+                font-size: 28px;
+            }
+
+            @media (max-width: 576px) {
+                font-size: 24px;
+            }
+        }
+
+        .error-description {
+            font-size: 18px;
+            color: #718096;
+            line-height: 1.8;
+            max-width: 600px;
+            margin: 0 auto;
+
+            @media (max-width: 768px) {
+                font-size: 16px;
+            }
+        }
+    }
+
+    .notfound-actions {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+
+        .btn {
+            padding: 15px 35px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-family: inherit;
+
+            &.btn-primary {
+                background: rgb(240, 127, 129);
+                color: #ffffff;
+                border-color: transparent;
+
+                &:hover {
+                    background: rgb(211, 109, 111);
+                    transform: translateY(-2px);
+                    box-shadow: 0 10px 25px rgba(240, 127, 129, 0.4);
+                }
+
+                &:active {
+                    background: rgb(88, 32, 27);
+                    transform: translateY(0);
+                }
+            }
+
+            &.btn-outline-primary {
+                background: transparent;
+                color: rgb(240, 127, 129);
+                border-color: rgb(240, 127, 129);
+
+                &:hover {
+                    background: rgb(240, 127, 129);
+                    color: #ffffff;
+                    transform: translateY(-2px);
+                    box-shadow: 0 10px 25px rgba(240, 127, 129, 0.3);
+                }
+
+                &:active {
+                    background: rgb(211, 109, 111);
+                    transform: translateY(0);
+                }
+            }
+
+            i {
+                font-size: 18px;
+            }
+
+            @media (max-width: 576px) {
+                width: 100%;
+                justify-content: center;
+                margin: 5px 0;
+
+                &.ms-3 {
+                    margin-left: 0 !important;
+                }
+            }
+        }
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+// Animation d'entrée
+.notfound-content {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
