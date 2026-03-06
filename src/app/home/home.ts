@@ -6,7 +6,6 @@ import { About } from './components/about/about';
 import { Service } from './components/service/service';
 import { Portfolio } from './components/portfolio/portfolio';
 import { Resume } from './components/resume/resume';
-import { Video } from './components/video/video';
 import { Testimonial } from './components/testimonial/testimonial';
 import { Blog } from './components/blog/blog';
 import { Contact } from './components/contact/contact';
