@@ -1,45 +1,28 @@
-<header class="navigation horizontal_header transparentOnScroll navbar navbar-expand-lg fixed-top">
-    <div class="header-ins">
-    <div class="container">
-            <!--LOGO AREA-->
-            <div class="site-logo">
-                <a href="#" class="hoveroff" title="">
-                    <!--<img src="" alt="">-->
-                    Rect<span>CV</span>
+<header class="modern-header" [class.scrolled]="scrolled()">
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="#home" class="logo">
+                    <span class="logo-text">Kodjo</span>
+                    <span class="logo-accent">André</span>
                 </a>
             </div>
-            <button class="button-toggler navbar-toggler collapsed" type="button" data-target="#navigation" data-toggle="collapse" aria-controls="navigation" aria-expanded="false">
+            
+            <button class="mobile-toggle" (click)="toggleMenu()" [class.active]="menuOpen()" aria-label="Toggle menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            <!--Main Navigation START-->
-            <ul class="justify-content-end scrollspy collapse navbar-collapse" id="navigation">
-                <li>
-                    <a href="#home" class="nav-link">Home</a>
-                </li>
-                <li>
-                    <a href="#about" class="nav-link">About</a>
-                </li>
-                <li>
-                    <a href="#service" class="nav-link">Services</a>
-                </li>
-                <li>
-                    <a href="#portfolio" class="nav-link">Portfolio</a>
-                </li>
-                <li>
-                    <a href="#resume" class="nav-link">Resume</a>
-                </li>
-                <li>
-                    <a href="#blog" class="nav-link">Blog</a>
-                </li>
-                <li>
-                    <a href="#contact" class="nav-link">Contact</a>
-                </li>
+            
+            <ul class="nav-menu" [class.active]="menuOpen()">
+                <li><a href="#home" class="nav-link" (click)="closeMenu()">Accueil</a></li>
+                <li><a href="#about" class="nav-link" (click)="closeMenu()">À Propos</a></li>
+                <li><a href="#service" class="nav-link" (click)="closeMenu()">Services</a></li>
+                <li><a href="#portfolio" class="nav-link" (click)="closeMenu()">Portfolio</a></li>
+                <li><a href="#resume" class="nav-link" (click)="closeMenu()">CV</a></li>
+                <li><a href="#blog" class="nav-link" (click)="closeMenu()">Blog</a></li>
+                <li><a href="#contact" class="nav-link nav-cta" (click)="closeMenu()">Contact</a></li>
             </ul>
-            <!--Main Navigation END-->
-        
-    </div>
-    </div>
-
+        </div>
+    </nav>
 </header>

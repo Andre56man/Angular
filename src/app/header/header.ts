@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, signal } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,5 +7,19 @@ import { Component } from '@angular/core';
   styleUrl: './header.scss',
 })
 export class Header {
+  menuOpen = signal(false);
+  scrolled = signal(false);
 
+  @HostListener('window:scroll')
+  onScroll() {
+    this.scrolled.set(window.scrollY > 50);
+  }
+
+  toggleMenu() {
+    this.menuOpen.update(val => !val);
+  }
+
+  closeMenu() {
+    this.menuOpen.set(false);
+  }
 }

@@ -1,5 +1,5 @@
 /*-----------------------------------------------------------
-* Template Name    : kevin | Responsive Bootstrap 4 Personal Template 
+* Template Name    : kodjo | Responsive Bootstrap 4 Personal Template 
 * Author           : theProger
 * Version          : 1.0.0
 * Created          : April 2020

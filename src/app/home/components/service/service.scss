@@ -1,0 +1,134 @@
+.services-section {
+  padding: 120px 0;
+  position: relative;
+  background: rgba(15, 23, 42, 0.5);
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 80px;
+
+    .section-label {
+      display: inline-block;
+      padding: 8px 20px;
+      background: rgba(99, 102, 241, 0.1);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      border-radius: 50px;
+      color: var(--primary-color);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-size: 48px;
+      font-weight: 800;
+      margin-bottom: 16px;
+
+      @media (max-width: 768px) {
+        font-size: 36px;
+      }
+    }
+
+    .section-description {
+      font-size: 18px;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+
+    .service-card {
+      background: rgba(30, 41, 59, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 40px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: var(--primary-color);
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+      }
+
+      &:hover {
+        transform: translateY(-10px);
+        border-color: rgba(99, 102, 241, 0.5);
+        box-shadow: var(--shadow-xl);
+
+        &::before {
+          transform: scaleX(1);
+        }
+
+        .service-icon {
+          transform: scale(1.1) rotate(5deg);
+          background: var(--primary-color);
+          color: white;
+        }
+      }
+
+      .service-icon {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(99, 102, 241, 0.1);
+        border-radius: 16px;
+        color: var(--primary-color);
+        margin-bottom: 24px;
+        transition: all 0.3s ease;
+      }
+
+      h3 {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 16px;
+        color: var(--text-primary);
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 1.7;
+        color: var(--text-secondary);
+        margin-bottom: 24px;
+      }
+
+      .service-features {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+
+        .feature-tag {
+          padding: 6px 14px;
+          background: rgba(99, 102, 241, 0.1);
+          border: 1px solid rgba(99, 102, 241, 0.3);
+          border-radius: 8px;
+          font-size: 12px;
+          font-weight: 600;
+          color: var(--primary-light);
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+      }
+    }
+  }
+}

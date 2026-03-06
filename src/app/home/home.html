@@ -47,7 +47,9 @@
 <!--FOOTER SECTION END-->
 
 <!--To Top Link START-->
-<a href="#" class="toTop" id="return-to-top">
-    <i class="fas fa-chevron-up"></i>
+<a href="#home" class="toTop" [class.show]="showScrollTop()" id="return-to-top" (click)="scrollToTop($event)">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path d="M5 12.5L10 7.5L15 12.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
 </a>
 <!--To Top Link END-->
