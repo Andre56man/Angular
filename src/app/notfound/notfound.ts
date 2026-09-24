@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Location } from '@angular/common';
 import { Header } from '../header/header';
@@ -11,7 +11,8 @@ import { Footer } from '../footer/footer';
   styleUrl: './notfound.scss',
 })
 export class Notfound {
-  constructor(private location: Location) {}
+  private readonly location = inject(Location);
+  readonly path = this.location.path() || '/';
 
   goBack(): void {
     this.location.back();

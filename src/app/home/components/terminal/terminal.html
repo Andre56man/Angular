@@ -1,0 +1,42 @@
+<div class="window terminal" (click)="focus()">
+  <div class="window-bar">
+    <div class="window-dots"><i></i><i></i><i></i></div>
+    <span class="window-title">kodjo&#64;portfolio: ~</span>
+    <span class="live mono">interactif</span>
+  </div>
+
+  <div class="body code" #body>
+    @for (line of lines(); track $index) {
+      @switch (line.kind) {
+        @case ('cmd') {
+          <div><span class="c-ok">➜</span> <span class="c-key">~</span> {{ line.text }}</div>
+        }
+        @case ('profile') {
+<pre class="profile">&#123;
+  <span class="c-key">"nom"</span>: <span class="c-str">"Kodjo André"</span>,
+  <span class="c-key">"role"</span>: <span class="c-str">"Ingénieur Logiciel"</span>,
+  <span class="c-key">"diplome"</span>: <span class="c-str">"Licence en Génie Logiciel"</span>,
+  <span class="c-key">"experience"</span>: <span class="c-str">"Stage Dev Fullstack @ ATG"</span>,
+  <span class="c-key">"localisation"</span>: <span class="c-str">"Grand-Bassam, CI"</span>,
+  <span class="c-key">"stack"</span>: [<span class="c-str">"Angular"</span>, <span class="c-str">"Django"</span>, <span class="c-str">"Flutter"</span>],
+  <span class="c-key">"curieux"</span>: <span class="c-kw">true</span>
+&#125;</pre>
+        }
+        @case ('accent') {
+          <div class="c-ok">{{ line.text }}</div>
+        }
+        @case ('err') {
+          <div class="err">{{ line.text }}</div>
+        }
+        @default {
+          <div class="c-com-lite">{{ line.text }}</div>
+        }
+      }
+    }
+    <label class="prompt">
+      <span class="c-ok">➜</span> <span class="c-key">~</span>
+      <input #field type="text" [value]="input()" (input)="input.set(field.value)" (keydown)="onKey($event)"
+             spellcheck="false" autocomplete="off" autocapitalize="off" aria-label="Saisir une commande">
+    </label>
+  </div>
+</div>

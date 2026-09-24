@@ -1,217 +1,67 @@
-<section class="resume-section" id="resume">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-label">CV - Résumé</span>
-            <h2 class="section-title">Mon Parcours</h2>
-            <p class="section-description">Mon expérience académique et professionnelle</p>
-        </div>
+<section class="section alt" id="resume">
+  <div class="container">
+    <app-section-header index="04" title="Parcours" comment="Expérience, formation et compétences techniques." />
 
-        <div class="resume-content">
-            <div class="resume-grid">
-                <div class="resume-column">
-                    <h3 class="resume-column-title">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 12px;">
-                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-                            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
-                        </svg>
-                        Formation
-                    </h3>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <h4>Licence 3 - Génie Logiciel</h4>
-                                <span class="timeline-date">01/2025 - 09/2025</span>
-                                <p>Institut Ivoirien de Technologie. En cours de formation en programmation avancée et développement logiciel professionnel.</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <h4>Licence 2 - Développement Logiciel</h4>
-                                <span class="timeline-date">09/2023 - 07/2025</span>
-                                <p>Institut Ivoirien de Technologie. Maîtrise du frontend (HTML5, CSS3, Bootstrap) et backend (Python/Django, Dart/Flutter). E-commerce et scraping web.</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <h4>Licence 1 - Programmation</h4>
-                                <span class="timeline-date">10/2023 - 06/2024</span>
-                                <p>Institut Ivoirien de Technologie. Fondamentaux de la programmation orientée objet avec C#, Dart et Flutter.</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <h4>Baccalauréat Scientifique - Série D</h4>
-                                <span class="timeline-date">10/2022 - 07/2023</span>
-                                <p>Lycée Robert Léon. Diplôme de baccalauréat scientifique avec excellentes bases en mathématiques et sciences.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div class="resume-grid">
+      <div>
+        <h3 class="col-title mono"><span class="accent">#</span> expérience</h3>
+        <ol class="timeline">
+          @for (item of experience; track item.title; let i = $index) {
+            <li [appReveal]="i * 100">
+              <p class="period mono">{{ item.period }}</p>
+              <h4>{{ item.title }}</h4>
+              <p class="place">{{ item.place }}</p>
+              <p>{{ item.description }}</p>
+            </li>
+          }
+        </ol>
 
-                <div class="resume-column">
-                    <h3 class="resume-column-title">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 12px;">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                        </svg>
-                        Certificats
-                    </h3>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <h4>Data Africa Hub (data tour) 2025</h4>
-                                <span class="timeline-date">2025</span>
-                                <p>8ème du classement national, sous le nom de Kaizen 5</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <h4>HCIA-openEuler v1.0</h4>
-                                <span class="timeline-date">2025</span>
-                                <p>Cours d'introduction système d'opération de Huawei (openEuler v1.0).</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <h4>Impression 3D & IA</h4>
-                                <span class="timeline-date">2025</span>
-                                <p>Formation impression 3D avec les outils IA</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <h3 class="col-title mono spaced"><span class="accent">#</span> certifications</h3>
+        <ul class="certs">
+          @for (cert of certifications; track cert.title; let i = $index) {
+            <li class="card" [appReveal]="i * 100">
+              <span class="tag accent">{{ cert.year }}</span>
+              <div>
+                <h4>{{ cert.title }}</h4>
+                <p>{{ cert.detail }}</p>
+              </div>
+            </li>
+          }
+        </ul>
+      </div>
 
-                <div class="resume-column">
-                    <h3 class="resume-column-title">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 12px;">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                            <circle cx="12" cy="10" r="3"></circle>
-                        </svg>
-                        Expérience
-                    </h3>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <h4>Développeur Fullstack</h4>
-                                <span class="timeline-date">2023 - Présent</span>
-                                <p>Projets Académiques & Personnels. Développement de sites web dynamiques, applications mobiles et systèmes e-commerce.</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <h4>Développeur Machine Learning</h4>
-                                <span class="timeline-date">2024</span>
-                                <p>Projets Académiques. Création d'algorithmes d'investissement boursier optimisés utilisant Python.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="skills-section">
-                <h3 class="skills-title">Compétences Techniques</h3>
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span class="skill-name">HTML5/CSS3</span>
-                            <span class="skill-percent">90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 90%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span class="skill-name">Bootstrap</span>
-                            <span class="skill-percent">85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span class="skill-name">JavaScript</span>
-                            <span class="skill-percent">80%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 80%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span class="skill-name">Python/Django</span>
-                            <span class="skill-percent">85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span class="skill-name">Dart/Flutter</span>
-                            <span class="skill-percent">80%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 80%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span class="skill-name">C#</span>
-                            <span class="skill-percent">75%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 75%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span class="skill-name">Backend Development</span>
-                            <span class="skill-percent">85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span class="skill-name">Photoshop</span>
-                            <span class="skill-percent">70%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 70%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span class="skill-name">Robotique/Arduino</span>
-                            <span class="skill-percent">75%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 75%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span class="skill-name">GNS3 (Réseau)</span>
-                            <span class="skill-percent">70%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 70%"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <div>
+        <h3 class="col-title mono"><span class="accent">#</span> formation</h3>
+        <ol class="timeline">
+          @for (item of education; track item.title; let i = $index) {
+            <li [appReveal]="i * 100">
+              <p class="period mono">{{ item.period }}</p>
+              <h4>{{ item.title }}</h4>
+              <p class="place">{{ item.place }}</p>
+              <p>{{ item.description }}</p>
+            </li>
+          }
+        </ol>
+      </div>
     </div>
+
+    <div class="window skills" appReveal>
+      <div class="window-bar">
+        <div class="window-dots"><i></i><i></i><i></i></div>
+        <span class="window-title">stack.json</span>
+      </div>
+      <dl class="skills-body">
+        @for (skill of skills; track skill.group) {
+          <div class="skill-row">
+            <dt class="mono">{{ skill.group }}</dt>
+            <dd class="tags">
+              @for (item of skill.items; track item) {
+                <span class="tag">{{ item }}</span>
+              }
+            </dd>
+          </div>
+        }
+      </dl>
+    </div>
+  </div>
 </section>

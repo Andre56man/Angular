@@ -1,55 +1,19 @@
-<!--PRELOADER START-->
-<app-preloader></app-preloader>
-<!--PRELOADER END-->
+<app-preloader />
+<app-header />
 
-<!--HEADER START-->
-<app-header></app-header>
-<!--HEADER END-->
+<main>
+  <app-introduction />
+  <app-about />
+  <app-service />
+  <app-portfolio />
+  <app-resume />
+  <app-testimonial />
+  <app-blog />
+  <app-contact />
+</main>
 
-<!--INTRODUCTION SECTION START-->
-<app-introduction></app-introduction>
-<!--INTRODUCTION SECTION END-->
+<app-footer />
 
-<!--ABOUT SECTION START-->
-<app-about></app-about>
-<!--ABOUT SECTION END-->
-
-<!--SERVICE SECTION START-->
-<app-service></app-service>
-<!--SERVICE SECTION END-->
-
-<!--PORTFOLIO SECTION START-->
-<app-portfolio></app-portfolio>
-<!--PORTFOLIO SECTION END-->
-
-<!--RESUME SECTION START-->
-<app-resume></app-resume>
-<!--RESUME SECTION END-->
-
-<!--VIDEO SECTION START-->
-<app-video></app-video>
-<!--VIDEO SECTION END-->
-
-<!--TESTIMONIAL SECTION START-->
-<app-testimonial></app-testimonial>
-<!--TESTIMONIAL SECTION END-->
-
-<!--BLOG SECTION START-->
-<app-blog></app-blog>
-<!--BLOG SECTION END-->
-
-<!--CONTACT SECTION START-->
-<app-contact></app-contact>
-<!--CONTACT SECTION END-->
-
-<!--FOOTER SECTION START-->
-<app-footer></app-footer>
-<!--FOOTER SECTION END-->
-
-<!--To Top Link START-->
-<a href="#home" class="toTop" [class.show]="showScrollTop()" id="return-to-top" (click)="scrollToTop($event)">
-    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-        <path d="M5 12.5L10 7.5L15 12.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-</a>
-<!--To Top Link END-->
+<button type="button" class="to-top" [class.show]="showScrollTop()" (click)="scrollToTop()" aria-label="Retour en haut">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 15 6-6 6 6"/></svg>
+</button>

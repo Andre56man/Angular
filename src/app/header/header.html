@@ -1,28 +1,26 @@
-<header class="modern-header" [class.scrolled]="scrolled()">
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">
-                <a href="#home" class="logo">
-                    <span class="logo-text">Kodjo</span>
-                    <span class="logo-accent">André</span>
-                </a>
-            </div>
-            
-            <button class="mobile-toggle" (click)="toggleMenu()" [class.active]="menuOpen()" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            
-            <ul class="nav-menu" [class.active]="menuOpen()">
-                <li><a href="#home" class="nav-link" (click)="closeMenu()">Accueil</a></li>
-                <li><a href="#about" class="nav-link" (click)="closeMenu()">À Propos</a></li>
-                <li><a href="#service" class="nav-link" (click)="closeMenu()">Services</a></li>
-                <li><a href="#portfolio" class="nav-link" (click)="closeMenu()">Portfolio</a></li>
-                <li><a href="#resume" class="nav-link" (click)="closeMenu()">CV</a></li>
-                <li><a href="#blog" class="nav-link" (click)="closeMenu()">Blog</a></li>
-                <li><a href="#contact" class="nav-link nav-cta" (click)="closeMenu()">Contact</a></li>
-            </ul>
-        </div>
+<header class="site-header" [class.scrolled]="scrolled() || menuOpen()">
+  <div class="container nav">
+    <a href="/#home" class="brand mono" (click)="closeMenu()">
+      <span class="accent">&gt;_</span> kodjo.andre
+    </a>
+
+    <nav class="menu" [class.open]="menuOpen()" aria-label="Navigation principale">
+      <ul>
+        @for (link of links; track link.href; let i = $index) {
+          <li>
+            <a [href]="'/' + link.href" class="mono" [class.active]="active() === link.href" (click)="closeMenu()">
+              <span class="num">0{{ i + 1 }}.</span>{{ link.label }}
+            </a>
+          </li>
+        }
+      </ul>
+      <a [href]="cvUrl" download class="btn btn-ghost cv">cv.pdf</a>
     </nav>
+
+    <button class="burger" [class.open]="menuOpen()" (click)="toggleMenu()"
+            [attr.aria-expanded]="menuOpen()" aria-label="Ouvrir le menu">
+      <span></span><span></span>
+    </button>
+  </div>
+  <div class="progress" [style.transform]="'scaleX(' + progress() + ')'" aria-hidden="true"></div>
 </header>

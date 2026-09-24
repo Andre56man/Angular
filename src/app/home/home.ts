@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit, signal } from '@angular/core';
+import { Component, HostListener, signal } from '@angular/core';
 import { Header } from '../header/header';
 import { Preloader } from '../preloader/preloader';
 import { Introduction } from './components/introduction/introduction';
@@ -6,7 +6,6 @@ import { About } from './components/about/about';
 import { Service } from './components/service/service';
 import { Portfolio } from './components/portfolio/portfolio';
 import { Resume } from './components/resume/resume';
-import { Video } from './components/video/video';
 import { Testimonial } from './components/testimonial/testimonial';
 import { Blog } from './components/blog/blog';
 import { Contact } from './components/contact/contact';
@@ -22,29 +21,23 @@ import { Footer } from '../footer/footer';
     Service,
     Portfolio,
     Resume,
-    Video,
     Testimonial,
     Blog,
     Contact,
-    Footer
+    Footer,
   ],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
-export class Home implements OnInit {
+export class Home {
   showScrollTop = signal(false);
 
   @HostListener('window:scroll')
   onScroll() {
-    this.showScrollTop.set(window.scrollY > 300);
+    this.showScrollTop.set(window.scrollY > 400);
   }
 
-  ngOnInit() {
-    this.onScroll();
-  }
-
-  scrollToTop(event: Event) {
-    event.preventDefault();
+  scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }
